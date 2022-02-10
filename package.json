@@ -4,7 +4,7 @@
   "description": "An app that allows users to find other the people to go to festivals with based on the music they like.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
     "express": "^4.17.2"
   },
   "devDependencies": {
+    "camelcase": "^6.3.0",
     "nodemon": "^2.0.15"
   }
 }
