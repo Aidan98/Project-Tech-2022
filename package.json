@@ -1,0 +1,25 @@
+{
+  "name": "project-tech-2022",
+  "version": "1.0.0",
+  "description": "An app that allows users to find other the people to go to festivals with based on the music they like.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Project-Tech-2022"
+  },
+  "keywords": [
+    "Backend",
+    "node.js"
+  ],
+  "author": "Aidan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
