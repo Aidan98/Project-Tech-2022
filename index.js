@@ -1,13 +1,13 @@
+require('dotenv').config()
 const ejs = require('ejs');
 const express = require('express'); 
 const mongoose = require('mongoose');
 
-
 const app = express();
 
-const db = require('./config/keys').MongoURI
+const dbKey = process.env.MongoURI
 
-mongoose.connect(db, { useNewURLParser: true})
+mongoose.connect(dbKey, { useNewURLParser: true})
 .then(() => console.log('Database has been connected.'))
 .catch(err => console.log(err))
 
