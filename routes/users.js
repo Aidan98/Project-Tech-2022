@@ -1,6 +1,7 @@
-const { Route } = require('express')
+// const { Route } = require('express')
 const express = require('express')
 const router = express.Router()
+const  account = require('../views/models')
 
 //RENDER PAGES
 router.get('/login', (req, res) => res.render('login'))
@@ -25,7 +26,7 @@ router.post('/register', (req, res) =>{
     if (password.length < 8) {
         errors.push({msg: 'Your password needs to be at least 8 characters long'})
     }
-
+    //RENDER PAGE WITH DATA
     if (errors.length > 0 ) {
         res.render('./register', {
             errors,
