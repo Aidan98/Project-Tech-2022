@@ -1,15 +1,14 @@
 <body>
     <%- include ('./partials/header.ejs') -%>
     <main>
-        <form id='login'>
+        <form action="/users/login" method="POST">
             <fieldset>
                 <legend>Festiv</legend>
                 <input type='email' id='email' placeholder='Email'>
                 <input type='password' id='psswrd' placeholder='Password'>
-                <input type='submit' value='Login'>
-                <button id='switch'>Create Account</button>
-            </fieldset>
-          
+                <button type="submit">Login</button>
+            </fieldset>         
         </form>
+        <a href='./register'><button id='switch'>Create Account </button></a>
     </main>
 </body>

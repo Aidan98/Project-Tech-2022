@@ -1,8 +1,15 @@
 const ejs = require('ejs');
 const express = require('express'); 
+const mongoose = require('mongoose');
 
 
 const app = express();
+
+const db = require('./config/keys').MongoURI
+
+mongoose.connect(db, { useNewURLParser: true})
+.then(() => console.log('Database has been connected.'))
+.catch(err => console.log(err))
 
 // const login = require('./routes/login')
 app.set('view engine', 'ejs')
