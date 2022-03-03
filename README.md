@@ -17,7 +17,7 @@ You can install Festiv either by downloading the ZIP, or alternatively if you pr
 Once you have cloned the repo you need to install the dependencies. You do this by running `npm install` in the terminal (make sure your terminal is set in the right directory i.e the directory the repo is in).
 
 ### Run Festify
-In order to run Festify you need to enter `npm start` in your terminal. the server will run on port 30000. Your url should look like this: `localhost:30000` 
+In order to run Festify you need to enter `npm start` in your terminal. the server will run on port 3000. Your url should look like this: `localhost:3000` 
 
 ### Set up your .env
 Set up your .env file for a MongoDB connection, the file should include the following:
