@@ -17,12 +17,12 @@ app.set('views', 'views')
 app.use(express.static('static'))
 app.use('/public', express.static(__dirname + '/public/'))
 
+// BODYPARSER
+app.use(express.urlencoded({extended: false}))
+
 //ROUTES
 app.use('/', require('./routes/home'))
 app.use('/users', require('./routes/users'))
-// app.use('/login', require('./routes/login'))
-// app.use('/register', require('./routes/register'))
-
   
 
   app.get('*', function(req, res){
