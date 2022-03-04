@@ -1,26 +1,36 @@
 <body>
-    <%- include ('./partials/header') -%> 
-    <%-  include ('./partials/errorMessages')-%> 
-        <form action='/users/register' method='POST'>
-            <fieldset>
-            <legend>Festiv</legend>
-            <label for='name'>Name</label>
-            <input type='name' id='name' name='name' class='form-control' placeholder='Enter Name'
-                value='<%= typeof name != 'undefined' ? name : '' %>' />
+    <%- include ('./partials/header') -%>
+        <%- include ('./partials/errorMessages')-%>
+            <form action='/users/register' method='POST'>
+                <fieldset>
+                    <legend>Festiv</legend>
+                    <label for='name'>Name</label>
+                    <input type='name' id='name' name='name' class='form-control' placeholder='Enter Name'                        
+                        value='<%= typeof name != 'undefined' ? name : '' %>' /> 
+                    <label for='email'>Email</label>
+                    <input type='email' id='email' name='email' class='form-control' placeholder='Enter Email'
+                        value='<%= typeof email != 'undefined' ? email : '' %>' />
+                    <label for='password'>Password</label>
+                    <input type='password' id='password' name='password' class='form-control'
+                        placeholder='Create Password' value='<%= typeof password != 'undefined' ? password : '' %>' />
+                    <label for='password2'>Confirm Password</label>
+                    <input type='password' id='password2' name='password2' class='form-control'
+                        placeholder='Confirm Password' value='<%= typeof password2 != 'undefined' ? password2 : '' %>' />
+                    />
+                    <button type='submit'>
+                        Register
+                    </button>
+                </fieldset>
+                <fieldset>
+                    <legend>Interests</legend>
+                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                    <label for="vehicle1"> I have a bike</label><br>
+                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                    <label for="vehicle2"> I have a car</label><br>
+                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                    <label for="vehicle3"> I have a boat</label>
+                </fieldset>
 
-            <label for='email'>Email</label>
-            <input type='email' id='email' name='email' class='form-control' placeholder='Enter Email'
-                value='<%= typeof email != 'undefined' ? email : '' %>' />
-            <label for='password'>Password</label>
-            <input type='password' id='password' name='password' class='form-control' placeholder='Create Password'
-                value='<%= typeof password != 'undefined' ? password : '' %>' />
-            <label for='password2'>Confirm Password</label>
-            <input type='password' id='password2' name='password2' class='form-control' placeholder='Confirm Password'
-                value='<%= typeof password2 != 'undefined' ? password2 : '' %>' />
-            <button type='submit'>
-                Register
-            </button>
-        </fieldset>
-        </form>
-        <a href='./login'><button id='switch'>Log in</button></a>
+            </form>
+            <a href='./login'><button id='switch'>Log in</button></a>
 </body>
