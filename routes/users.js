@@ -1,7 +1,7 @@
 // const { Route } = require('express')
 const express = require('express')
 const router = express.Router()
-const  account = require('../models/accounts')
+const  Account = require('../models/accounts')
 const bcrypt = require ('bcryptjs')
 
 //RENDER PAGES
@@ -10,6 +10,7 @@ router.get('/register', (req, res) => res.render('register'))
 
 // REGISTER HANDLER
 router.post('/register', (req, res) =>{
+    console.log(req.body)
     const { name, email, password, password2} = req.body
     let errors = [];
 
@@ -37,7 +38,7 @@ router.post('/register', (req, res) =>{
             password2
         })
     }  else {
-        account.findOne({email: email})
+        Account.findOne({email: email})
         .then(account => {
             if (account) {
                 // ACCOUNT ALREADY EXISTS
