@@ -11,7 +11,7 @@ router.get('/register', (req, res) => res.render('register'))
 // REGISTER HANDLER
 router.post('/register', (req, res) =>{
     console.log(req.body)
-    const { name, email, password, password2} = req.body
+    const { name, email, password, password2, genre} = req.body
     let errors = [];
 
     //CHECK FIELDS
@@ -35,7 +35,8 @@ router.post('/register', (req, res) =>{
             name,
             email,
             password,
-            password2
+            password2,
+            genre
         })
     }  else {
         Account.findOne({email: email})
@@ -48,13 +49,15 @@ router.post('/register', (req, res) =>{
                     name,
                     email,
                     password,
-                    password2
+                    password2,
+                    genre
                 })
             } else {
                 const newAccount = new Account({
                     name,
                     email,
-                    password
+                    password,
+                    genre
                 })
                 console.log(newAccount)
                 res.send('account created')
