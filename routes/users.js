@@ -1,7 +1,7 @@
 // const { Route } = require('express')
 const express = require('express')
 const router = express.Router()
-const  account = require('../views/models')
+const  account = require('../models/accounts')
 
 //RENDER PAGES
 router.get('/login', (req, res) => res.render('login'))

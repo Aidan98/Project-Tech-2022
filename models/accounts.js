@@ -25,4 +25,4 @@ const acountSchema = new mongoose.Schema({
 
 const Account =  mongoose.model('accounts', acountSchema)
 
-model.export = Account
+module.export = Account
