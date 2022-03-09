@@ -2,7 +2,7 @@
 const express = require('express')
 const router = express.Router()
 const  Account = require('../models/accounts')
-const bcrypt = require ('bcryptjs')
+const argon2 = require ('argon2')
 
 //RENDER PAGES
 router.get('/login', (req, res) => res.render('login'))
@@ -40,7 +40,7 @@ router.post('/register', (req, res) =>{
         })
     }  else {
         Account.findOne({email: email})
-        .then(account => {
+        .then( async account => {
             if (account) {
                 // ACCOUNT ALREADY EXISTS
                 errors.push({msg: 'This email is already in use'})
@@ -59,9 +59,19 @@ router.post('/register', (req, res) =>{
                     password,
                     genre
                 })
-                console.log(newAccount)
-                res.send('account created')
-            }
+                try {
+                    const hash = await argon2.hash(newAccount.password, {hashLength: 10});
+                    // SET STRING PASSWORD TO HASHED PASSWORD
+                    newAccount.password = hash
+                    newAccount.save()
+                    .then(account =>{
+                        res.redirect('/users/login')
+                    })
+                    .catch()
+                  } catch (err) {
+                    throw err
+                  }
+        }
         })
     }
 
