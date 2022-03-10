@@ -14,7 +14,7 @@ const acountSchema = new mongoose.Schema({
         required: true
     }, 
     genre: {
-        type: String,
+        type: Array,
         required: false
     },
     date: {
@@ -24,5 +24,4 @@ const acountSchema = new mongoose.Schema({
 })
 
 const Account =  mongoose.model('Account', acountSchema)
-
-module.export = Account
+module.exports = Account
