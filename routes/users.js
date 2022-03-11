@@ -3,6 +3,7 @@ const express = require('express')
 const router = express.Router()
 const  Account = require('../models/accounts')
 const argon2 = require ('argon2')
+const passport = require('passport')
 
 //RENDER PAGES
 router.get('/login', (req, res) => res.render('login'))
@@ -77,5 +78,14 @@ router.post('/register', (req, res) =>{
 
 })
 
+
+// LOGIN HANDLER
+router.post('/login', (req, res, next)=> {
+    passport.authenticate('local', {
+        successRedirect: '/',
+        failureRedirect: '/users/login',
+        // failureFlash: true
+    })(req, res, next)
+})
 
 module.exports = router
