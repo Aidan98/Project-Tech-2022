@@ -78,7 +78,6 @@ router.post('/register', (req, res) =>{
 
 })
 
-
 // LOGIN HANDLER
 router.post('/login', (req, res, next)=> {
     passport.authenticate('local', {
@@ -87,5 +86,7 @@ router.post('/login', (req, res, next)=> {
         // failureFlash: true
     })(req, res, next)
 })
+
+//LOGOUT HANDLER
 
 module.exports = router
