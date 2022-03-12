@@ -21,5 +21,7 @@ In order to run Festify you need to enter `npm start` in your terminal. the serv
 
 ### Set up your .env
 Set up your .env file for a MongoDB connection, the file should include the following:
-`MongoURI= <YOUR MONGO DB URI>
-SecretSESSION = <YOUR SECRET KEY>`
+```
+MongoURI= <YOUR MONGO DB URI>
+SecretSESSION = <YOUR SECRET KEY>
+```
