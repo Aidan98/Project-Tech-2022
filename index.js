@@ -21,22 +21,22 @@ app.set('views', 'views')
 app.use(express.static('static'))
 app.use('/public', express.static(__dirname + '/public/'))
 
-// BODYPARSER
+// EXPRESS SESSION
 app.use(express.urlencoded({ extended: false }))
 app.use(session({
     secret: EXPsession,
-    resave: true,
-    saveUninitialized: true
+    resave: false,
+    saveUninitialized: false
   })
-);
+)
+
+//PASSPORT MIDDLEWARE
+app.use(passport.initialize());
+app.use(passport.session());
 
 //ROUTES
 app.use('/', require('./routes/home'))
 app.use('/users', require('./routes/users'))
-
-app.use(passport.initialize());
-app.use(passport.session());
-
 
 app.get('*', function (req, res) {
   res.send('error 404 not found', 404)
