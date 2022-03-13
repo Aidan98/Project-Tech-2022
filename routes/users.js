@@ -1,7 +1,7 @@
 // const { Route } = require('express')
 const express = require('express')
 const router = express.Router()
-const  Account = require('../models/accounts')
+const Account = require('../models/accounts')
 const argon2 = require ('argon2')
 const passport = require('passport')
 
