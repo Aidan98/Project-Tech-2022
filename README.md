@@ -29,7 +29,7 @@ MongoURI= <YOUR MONGO DB URI>
 SecretSESSION = <YOUR SECRET KEY>
 ```
 
-##Sources
+## Sources
 * How to hash and compare hashed passwords using Argon2  https://github.com/ranisalt/node-argon2/wiki/Migrating-from-another-hash-function
 * How to apply dotenv to your application https://www.youtube.com/watch?v=17UVejOw3zA&t=222s
 * A confusing guide on how to use passport.js https://www.passportjs.org/concepts/authentication/strategies/
