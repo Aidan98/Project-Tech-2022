@@ -3,6 +3,27 @@
     <main>
      <h1>Home</h1>
      <p>Welcome <%= name %></p>
+     <h2>Current details</h2>
+     <ul>
+         <li><%= name %></li>
+         <li><%= email %></li>
+     <li><%= genre %></li>
+    </ul>
+        <h2>Edit details</h2>
+        <form action='/update' method='POST'>
+            <img src="../public/images/logo.png" alt="">
+            <fieldset>
+                <legend>Personal details</legend>
+                <input type='name' id='name' name='name' class='form-control' placeholder='Enter Name'                        
+                    value='<%= typeof name != 'undefined' ? name : '' %>' /> 
+                <input type='email' id='email' name='email' class='form-control' placeholder='Enter Email'
+                    value='<%= typeof email != 'undefined' ? email : '' %>' />
+            </fieldset>
+            <fieldset>
+                <legend>Music interests</legend>
+            </fieldset>
+            <button type='submit'>Save</button>
+        </form>
      <a href='/users/logout'><button id='switch'>Log Out</button></a>
     </main>
 </body>
