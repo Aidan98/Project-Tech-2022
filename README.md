@@ -5,6 +5,9 @@ Festify is an app that allows it's users encounter new people based on their sha
 _When I am using the app I want to be able to create an account so that others can see who I am._
 ![Wireframes festiv](https://github.com/Aidan98/Project-Tech-2022/blob/main/public/images/interface.png?raw=true)
 
+## What can you do with Festivy
+With the current iteration of this node.js app you can register, login and update your account. Furthermore your password is hashed using Argon2 for added security.
+
 ## Install Festify
 Make a new folder in wich you want to place this repository. This way you will be able to find the project easily on your computer.
 
@@ -26,7 +29,7 @@ MongoURI= <YOUR MONGO DB URI>
 SecretSESSION = <YOUR SECRET KEY>
 ```
 
-##Sources
+## Sources
 * How to hash and compare hashed passwords using Argon2  https://github.com/ranisalt/node-argon2/wiki/Migrating-from-another-hash-function
 * How to apply dotenv to your application https://www.youtube.com/watch?v=17UVejOw3zA&t=222s
 * A confusing guide on how to use passport.js https://www.passportjs.org/concepts/authentication/strategies/
@@ -34,4 +37,5 @@ SecretSESSION = <YOUR SECRET KEY>
 * Express-session https://github.com/expressjs/session#readme
 * How to validate using mongoose https://mongoosejs.com/docs/validation.html
 * How to populate using mongoose https://mongoosejs.com/docs/populate.html
+* How to find and update data in MongoDB using Mongoose https://mongoosejs.com/docs/tutorials/findoneandupdate.html
 * How to hande authentication and create protected routes https://morioh.com/p/88d350eef785
