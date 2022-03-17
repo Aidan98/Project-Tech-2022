@@ -5,7 +5,7 @@ const express = require('express')
 const session = require('express-session')
 const mongoose = require('mongoose')
 const passport = require('passport')
-const assert =require ('assert')
+const PORT = process.env.PORT || 3000
 
 
 const app = express();
@@ -45,5 +45,5 @@ app.get('*', function (req, res) {
 })
 
 
-app.listen(3000)
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
