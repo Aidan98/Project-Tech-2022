@@ -1,10 +1,10 @@
 <body>
     <%- include ('./partials/header') -%>
-        <%- include ('./partials/errorMessages')-%>
             <form action='/users/register' method='POST'>
                 <img src="../public/images/logo.png" alt="">
                 <fieldset>
                     <legend>Festiv</legend>
+                    <%- include ('./partials/errorMessages')-%>
                     <input type='name' id='name' name='name' class='form-control' placeholder='Enter Name'                        
                         value='<%= typeof name != 'undefined' ? name : '' %>' /> 
                     <input type='email' id='email' name='email' class='form-control' placeholder='Enter Email'
@@ -17,40 +17,51 @@
                 <fieldset>
                     <legend>Music interests</legend>
                     <ul class="genre_picker">
-                    <li></label><input type="checkbox" id="genre" name="genre" value="Electronic">
+                    <li class="selection"><input type="checkbox" id="genre" name="genre" value="Electronic">
+                        <p><span>Electronic</span></p>
                         <label for="genre"> Electronic</label>
                     </li>
-                    <li><input type="checkbox" id="genre" name="genre" value="Blues">
+                    <li class="selection"><input type="checkbox" id="genre" name="genre" value="Blues">
+                        <p><span>Blues</span></p>
                         <label for="genre">Blues</label>
                     </li>
-                    <li> <input type="checkbox" id="genre" name="genre" value="Pop">
+                    <li class="selection"> <input type="checkbox" id="genre" name="genre" value="Pop">
+                        <p><span>Pop</span></p>
                         <label for="genre">Pop</label>
                     </li>
-                    <li> <input type="checkbox" id="genre" name="genre" value="Country">
+                    <li class="selection"> <input type="checkbox" id="genre" name="genre" value="Country">
+                        <p><span>Country</span></p>
                         <label for="genre">Country</label>
                     </li>
-                    <li> <input type="checkbox" id="genre" name="genre" value="House">
+                    <li class="selection"> <input type="checkbox" id="genre" name="genre" value="House">
+                        <p><span>House</span></p>
                         <label for="genre">House</label>
                     </li>
-                    <li> <input type="checkbox" id="genre" name="genre" value="Hip Hop">
+                    <li class="selection"> <input type="checkbox" id="genre" name="genre" value="Hip Hop">
+                        <p><span>Hip hop</span></p>
                         <label for="genre">Hip hop</label>
                     </li>
-                    <li> <input type="checkbox" id="genre" name="genre" value="Jazz">
+                    <li class="selection"> <input type="checkbox" id="genre" name="genre" value="Jazz">
+                        <p><span>Jazz</span></p>
                         <label for="genre">Jazz</label>
                     </li>
-                    <li>
+                    <li class="selection">
                         <input type="checkbox" id="genre" name="genre" value="RB">
+                        <p><span>R & B</span></p>
                         <label for="genre">R & B</label>
                     </li>
-                    <li> <input type="checkbox" id="genre" name="genre" value="Hard rock">
+                    <li class="selection"> <input type="checkbox" id="genre" name="genre" value="Hard rock">
+                        <p><span>Hard rock</span></p>
                         <label for="genre">Hard rock</label>
                     </li>
-                    <li>
+                    <li class="selection">
                         <input type="checkbox" id="genre" name="genre" value="Kpop">
+                        <p><span>Kpop</span></p>
                         <label for="genre">Kpop</label>
                     </li>
-                    <li>
+                    <li class="selection">
                         <input type="checkbox" id="genre" name="genre" value="Metal">
+                        <p><span>Metal</span></p>
                         <label for="genre">Metal</label>
                     </li>
                 </ul>
@@ -58,4 +69,5 @@
                 <button type='submit'>Register</button>
             </form>
             <a href='./login'><button id='switch'>Log in</button></a>
+            <script type="text/javascript" src="../public/js/script.js"></script>
 </body>

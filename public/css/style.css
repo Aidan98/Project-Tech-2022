@@ -3,20 +3,14 @@
 
 }
 
-html {
-    /* https://stackoverflow.com/questions/16841323/making-gradient-background-fill-page-with-css/16841457 */
-    background-image: linear-gradient(#7067AE, #E44B91);
-    height: 100%;
-    background-repeat: no-repeat;
-}
-
 body {
+    background-image: linear-gradient(#7067AE, #E44B91);
+    /* background-repeat: no-repeat; */
     margin: 0em;
     padding: 0em;
-   overflow-y: hidden;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 main {
@@ -34,8 +28,8 @@ form {
 
 
 img {
-    height: 20em;
-    width: auto;
+    height: auto;
+    width: 35vh;
 }
 
 fieldset {
@@ -46,8 +40,8 @@ fieldset {
 
 legend {
     color: #FFFFFF;
-   font-size: 24px;
-   margin-bottom: 5px;
+    font-size: 4em;
+    margin-bottom: 5px;
 }
 .genre_picker { 
     text-align: unset;
@@ -61,13 +55,55 @@ legend {
      /* column-width: 25em; */
   }  
 
+  .selection {
+    position: relative;
+    width: 40vw;
+    height: 8vh;
+    margin: 5px;
+    border: 2px solid #50bcf2;
+    box-sizing: border-box;
+  }
+
+  .selection p {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 25px;
+    transition: .5s ease;
+    top: -16;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  .selection input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40vw;
+    height: 8vh;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  span {
+      font-size: 3em;
+  }
+  
+  input[type=checkbox]:checked ~ p {
+    background-color: #50bcf2;
+  }
+
 
 
 input[type="name"], input[type="password"], input[type="email"]{
     display: block;
     background-color: rgba(255, 255, 255, .4);
     border: none;
-    height: 2.1em;
+    height: 4vh;
+    width: 30vh;
     margin-bottom: 10px;
     padding-left: 10px;
 }
@@ -80,13 +116,14 @@ label {
 
 ::placeholder {
     color: #000000;
+    font-size: 3em;
 }
 
 button[type="submit"], #switch, .keepswiping {
     display: block;
-    width: 15em;
-    height: 3em;
-    border-radius: 20px;
+    width: 30vh;
+    height: 5vh;
+    border-radius: 100px;
     /* box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25); */
     color: #FFFFFF;
 }
@@ -96,16 +133,17 @@ a {
     flex: 1 100%;
     margin-left: 50%;
     margin-right: 50%;
-    
     /* top: 50%;
     left: 50%; */
 }
+
 
 .home {
     margin: unset;
 }
 
 button[type="submit"] {
+    font-size: 3em;
     background: #7067AE;
     margin: auto;
     margin-top: 15px;
@@ -114,21 +152,175 @@ button[type="submit"] {
 
 #switch {
     position: static;
-    border-width: 1px;
+    border-width: 4px;
     border-color: #FFFFFF;
+    font-size: 3em;
     background: rgba(0, 0, 0, 0);
     border-style: solid ;
 }
 
+@keyframes slidein {
+    from {
+      margin-top: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin: 0%;
+      width: 100%;
+    }
+  }
 
+/* DESKTOP */
+@media only screen and (min-width: 80em){
+    body {
+        margin: 0em;
+        padding: 0em;
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+    }
+    
+    main {
+       justify-content: center;
+    }
+    
+    
+    form {
+        margin-top: 5%;
+        display: inline-block;
+        /* flex: 1 100%; */
+        justify-content: center;
+        /* background: #7067AE; */
+    }
+    
+    
+    img {
+        height: 20em;
+        width: auto;
+    }
+    
+    fieldset {
+        display: grid;
+        border: none;
+        justify-content: center;
+    }
+    
+    legend {
+        color: #FFFFFF;
+       font-size: 24px;
+       margin-bottom: 5px;
+    }
+    .genre_picker { 
+        text-align: unset;
+        margin: 0; 
+        padding: 0;  
+        list-style: none; 
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        -o-column-count: 2;
+         column-count: 2;
+      }  
+    
+    
+    
+    input[type="name"], input[type="password"], input[type="email"]{
+        display: block;
+        background-color: rgba(255, 255, 255, .4);
+        border: none;
+        height: 2.1em;
+        margin-bottom: 10px;
+        padding-left: 10px;
+    }
+    
+    label {
+        padding-left: 15px;
+        text-indent: -15px;
+        align-items: center;
+      }
+    
+    ::placeholder {
+        color: #000000;
+        font-size: unset;
+    }
+    
+    button[type="submit"], #switch, .keepswiping {
+        display: block;
+        width: 15em;
+        height: 40px;
+        font-size: 1em;
+        border-radius: 20px;
+        /* box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25); */
+        color: #FFFFFF;
+    }
+    
+    a {
+        display: block;
+        flex: 1 100%;
+        margin-left: 50%;
+        margin-right: 50%;
+    }
+    
+    .home {
+        margin: unset;
+    }
+    
+    button[type="submit"] {
+        background: #7067AE;
+        margin: auto;
+        margin-top: 15px;
+        border: none;
+    }
+    
+    #switch {
+        position: static;
+        border-width: 1px;
+        border-color: #FFFFFF;
+        background: rgba(0, 0, 0, 0);
+        border-style: solid ;
+    }
 
-/*****************
-    PAGE TITLE
-******************/
-h1{
-    color: #000000;
-    text-align: center;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    .selection {
+        position: relative;
+        width: 140px;
+        height: 100px;
+        margin: 5px;
+        border: 2px solid #50bcf2;
+        box-sizing: border-box;
+      }
+    
+      .selection p {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 25px;
+        transition: .5s ease;
+        top: -16;
+        left: 0;
+        position: absolute;
+        z-index: -1;
+      }
+      
+      .selection input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 140px;
+        height: 100px;
+        opacity: 0;
+        cursor: pointer;
+      }
+    
+      span {
+          font-size: unset;
+      }
+      
+      input[type=checkbox]:checked ~ p {
+        background-color: #50bcf2;
+      }
+    
+    
+    
 }
-

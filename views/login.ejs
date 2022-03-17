@@ -1,9 +1,10 @@
 <body>
     <%- include ('./partials/header.ejs') -%>
+    <%- include ('./partials/errorMessages')-%>
         <form action="/users/login" method="POST">
             <img src="../public/images/logo.png" alt="">
             <fieldset>
-                <legend>Festiv</legend>
+                <legend>Login</legend>
                 <input type='email' id='email' name="email" placeholder='Email'>
                 <input type='password' id='password' name="password" placeholder='Password'>
                 <button type="submit">Login</button>
