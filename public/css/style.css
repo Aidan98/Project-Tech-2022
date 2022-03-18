@@ -171,9 +171,11 @@ button[type="submit"] {
     body {
         margin: 0em;
         padding: 0em;
-       display: flex;
-       flex-wrap: wrap;
-       justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-repeat: no-repeat;
+        height: 100%;
     }
     
     main {
@@ -184,9 +186,8 @@ button[type="submit"] {
     form {
         margin-top: 5%;
         display: inline-block;
-        /* flex: 1 100%; */
         justify-content: center;
-        /* background: #7067AE; */
+        height: 35vh;
     }
     
     
@@ -203,8 +204,8 @@ button[type="submit"] {
     
     legend {
         color: #FFFFFF;
-       font-size: 24px;
-       margin-bottom: 5px;
+        font-size: 24px;
+        margin-bottom: 5px;
     }
     .genre_picker { 
         text-align: unset;
