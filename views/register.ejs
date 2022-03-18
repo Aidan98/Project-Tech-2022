@@ -3,7 +3,7 @@
             <form action='/users/register' method='POST'>
                 <img src="../public/images/logo.png" alt="">
                 <fieldset>
-                    <legend>Festiv</legend>
+                    <legend>Register</legend>
                     <%- include ('./partials/errorMessages')-%>
                     <input type='name' id='name' name='name' class='form-control' placeholder='Enter Name'                        
                         value='<%= typeof name != 'undefined' ? name : '' %>' /> 
@@ -41,6 +41,7 @@
                         <p><span>Hip hop</span></p>
                         <label for="genre">Hip hop</label>
                     </li>
+                    <div id="container">
                     <li class="selection"> <input type="checkbox" id="genre" name="genre" value="Jazz">
                         <p><span>Jazz</span></p>
                         <label for="genre">Jazz</label>
@@ -64,10 +65,13 @@
                         <p><span>Metal</span></p>
                         <label for="genre">Metal</label>
                     </li>
+                </div>
                 </ul>
+                <a href="http://" target="_blank" rel="noopener noreferrer" id="moreLess">More genres</a>
                 </fieldset>
                 <button type='submit'>Register</button>
             </form>
+            <!-- <button id="moreLess">More genres</button> -->
             <a href='./login'><button id='switch'>Log in</button></a>
             <script type="text/javascript" src="../public/js/script.js"></script>
 </body>

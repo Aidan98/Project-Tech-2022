@@ -1,10 +1,36 @@
-*{
-    font-family: 'Poppins', sans-serif;
+@font-face{
+    font-family: SF-Text;
+    src: url(../fonts/SF-UI-Text-Regular.otf);
 
 }
 
+@font-face {
+    font-family: SF-Bold;
+    src: url(../fonts/SF-UI-Display-Bold.otf);
+}
+
+@font-face {
+    font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+    font-display: swap;
+}
+
+* {
+    font-family: SF-Text;
+}
+
+html {
+    background: linear-gradient(#7067AE, #E44B91)no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* height: 100%; */
+}
+
 body {
-    background-image: linear-gradient(#7067AE, #E44B91);
     margin: 0em;
     padding: 0em;
     display: flex;
@@ -12,9 +38,15 @@ body {
     justify-content: center;
 }
 
-main {
-   justify-content: center;
+body>section {
+    text-align: center;
+    width: 100%;
 }
+
+body>section>ul {
+    list-style-type: none;
+}
+
 
 
 form {
@@ -38,8 +70,9 @@ fieldset {
 }
 
 legend {
+    font-family: SF-Bold;
     color: #FFFFFF;
-    font-size: 4em;
+    font-size: 3em;
     margin-bottom: 5px;
 }
 .genre_picker { 
@@ -49,6 +82,10 @@ legend {
     list-style: none; 
      /* column-width: 25em; */
   }  
+
+  li {
+      font-size: 3em;
+  }
 
   .selection {
     position: relative;
@@ -96,6 +133,7 @@ legend {
 input[type="name"], input[type="password"], input[type="email"]{
     display: block;
     background-color: rgba(255, 255, 255, .4);
+    font-size: 3em;
     border: none;
     height: 4vh;
     width: 30vh;
@@ -111,7 +149,7 @@ label {
 
 ::placeholder {
     color: #000000;
-    font-size: 3em;
+    /* font-size: 3em; */
 }
 
 button[type="submit"], #switch, .keepswiping {
@@ -119,23 +157,26 @@ button[type="submit"], #switch, .keepswiping {
     width: 30vh;
     height: 5vh;
     border-radius: 100px;
-    /* box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25); */
+    font-size: 3em;
     color: #FFFFFF;
 }
+
+/* .home {
+    margin: unset;
+} */
 
 a {
     display: block;
     flex: 1 100%;
     margin-left: 50%;
     margin-right: 50%;
-    /* top: 50%;
-    left: 50%; */
+    color: #3EC4F3;
 }
 
-
-.home {
-    margin: unset;
+#moreLess {
+    font-size: 3em;
 }
+
 
 button[type="submit"] {
     font-size: 3em;
@@ -152,6 +193,16 @@ button[type="submit"] {
     font-size: 3em;
     background: rgba(0, 0, 0, 0);
     border-style: solid ;
+    margin-bottom: 50px;
+}
+
+h1, h2 {
+    font-size: 4em;
+    font-family: SF-Bold;
+}
+
+p {
+    font-size: 3em;
 }
 
 @keyframes slidein {
@@ -168,14 +219,22 @@ button[type="submit"] {
 
 /* DESKTOP */
 @media only screen and (min-width: 80em){
+    html {
+        background-image: unset;
+    }
+
     body {
+        background: linear-gradient(#7067AE, #E44B91)no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
         margin: 0em;
         padding: 0em;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         background-repeat: no-repeat;
-        height: 100%;
     }
     
     main {
@@ -187,7 +246,8 @@ button[type="submit"] {
         margin-top: 5%;
         display: inline-block;
         justify-content: center;
-        height: 35vh;
+        height: auto;
+        width: 320px;
     }
     
     
@@ -198,6 +258,7 @@ button[type="submit"] {
     
     fieldset {
         display: grid;
+        columns: 1;
         border: none;
         justify-content: center;
     }
@@ -207,24 +268,83 @@ button[type="submit"] {
         font-size: 24px;
         margin-bottom: 5px;
     }
+
+    ul>li:nth-of-type(1){
+        grid-area: item1;
+    }
+    ul>li:nth-of-type(2){
+        grid-area: item2;
+    }
+    ul>li:nth-of-type(3){
+        grid-area: item3;
+    }
+    ul>li:nth-of-type(4){
+        grid-area: item4;
+    }
+    ul>li:nth-of-type(5){
+        grid-area: item5;
+    }
+    ul>li:nth-of-type(6){
+        grid-area: item6;
+    }
+    ul>div>li:nth-of-type(1){
+        grid-area: item7;
+    }
+    ul>div>li:nth-of-type(2){
+        grid-area: item8;
+    }
+    ul>div>li:nth-of-type(3){
+        grid-area: item9;
+    }
+    ul>div>li:nth-of-type(4){
+        grid-area: item10;
+    }
+    ul>div>li:nth-of-type(5){
+        grid-area: item11;
+    }
+    
     .genre_picker { 
+        display: grid;
+        grid-template-columns: 140px 140px;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "item1 item2"
+        "item3 item4"
+        "item5 item6"
+        "item12 item12" ;
+        column-gap: 10px;
         text-align: unset;
         margin: 0; 
         padding: 0;  
         list-style: none; 
-        -webkit-column-count: 2;
-        -moz-column-count: 2;
-        -o-column-count: 2;
-         column-count: 2;
       }  
+      li {
+        font-size: unset;
+    }
     
-    
+    #container {
+        display: grid;
+        grid-area: item12;
+        grid-template-columns: 140px 140px;
+        grid-template-rows: auto;
+        grid-template-areas:         
+        "item7 item8"
+        "item9 item10"
+        "item11 .";
+        column-gap: 10px;
+        text-align: unset;
+        margin: 0; 
+        padding: 0;  
+        list-style: none; 
+    }
     
     input[type="name"], input[type="password"], input[type="email"]{
         display: block;
         background-color: rgba(255, 255, 255, .4);
         border: none;
+        font-size: unset;
         height: 2.1em;
+        width: 260px;
         margin-bottom: 10px;
         padding-left: 10px;
     }
@@ -256,10 +376,14 @@ button[type="submit"] {
         margin-left: 50%;
         margin-right: 50%;
     }
-    
-    .home {
-        margin: unset;
+
+    #moreLess {
+        font-size: unset;
     }
+    
+    /* .home {
+        margin: unset;
+    } */
     
     button[type="submit"] {
         background: #7067AE;
@@ -317,6 +441,14 @@ button[type="submit"] {
         background-color: #50bcf2;
       }
     
+      h1, h2 {
+        font-size: unset;
+        font-family: SF-Bold;
+    }
+
+    p {
+        font-size: unset;
+    }
     
     
 }

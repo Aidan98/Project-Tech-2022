@@ -1,14 +1,16 @@
 <body>
     <%- include ('./partials/header.ejs') -%>
-    <main>
+    <section>
      <h1>Home</h1>
      <p>Welcome <%= name %></p>
      <h2>Current details</h2>
      <ul>
-         <li><%= name %></li>
-         <li><%= email %></li>
-     <li><%= genre %></li>
+         <li>Name: <%= name %></li>
+         <li>Email: <%= email %></li>
+     <li>Genres: <%= genre %></li>
     </ul>
+</section>
+<section>
         <h2>Edit details</h2>
         <form action='/update' method='POST'>
             <fieldset>
@@ -23,6 +25,7 @@
             </fieldset>
             <button type='submit'>Save</button>
         </form>
-     <a class='home' href='/users/logout'><button id='switch'>Log Out</button></a>
-    </main>
+        
+    </section>
+    <a class='home' href='/users/logout'><button id='switch'>Log Out</button></a>
 </body>
