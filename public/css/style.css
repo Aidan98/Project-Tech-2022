@@ -92,7 +92,7 @@ legend {
     width: 40vw;
     height: 8vh;
     margin: 5px;
-    border: 2px solid #50bcf2;
+    border: 2px solid #3EC4F3;
     box-sizing: border-box;
   }
 
@@ -120,12 +120,8 @@ legend {
     cursor: pointer;
   }
 
-  span {
-      font-size: 3em;
-  }
-  
   input[type=checkbox]:checked ~ p {
-    background-color: #50bcf2;
+    background-color: #3EC4F3;
   }
 
 
@@ -201,9 +197,6 @@ h1, h2 {
     font-family: SF-Bold;
 }
 
-p {
-    font-size: 3em;
-}
 
 @keyframes slidein {
     from {
@@ -405,7 +398,7 @@ p {
         width: 140px;
         height: 100px;
         margin: 5px;
-        border: 2px solid #50bcf2;
+        border: 2px solid #3EC4F3;
         box-sizing: border-box;
       }
     
@@ -438,7 +431,7 @@ p {
       }
       
       input[type=checkbox]:checked ~ p {
-        background-color: #50bcf2;
+        background-color: #3EC4F3;
       }
     
       h1, h2 {
