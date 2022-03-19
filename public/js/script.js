@@ -3,6 +3,7 @@ let hideItems = document.getElementById('container')
 let isHidden = true;
 const btn = document.getElementById('moreLess')
 
+btn.style.display= 'block'
 hideItems.style.display = 'none'
 
 for (let i = 0; i < labels.length; i++) {

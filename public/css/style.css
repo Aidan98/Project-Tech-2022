@@ -110,6 +110,10 @@ legend {
     position: absolute;
     z-index: -1;
   }
+
+  .selection label {
+      display: none;
+  }
   
   .selection input {
     position: absolute;
@@ -169,6 +173,7 @@ a {
 }
 
 #moreLess {
+    display: none;
     font-size: 3em;
 }
 
