@@ -4,6 +4,7 @@ const Account = require('../models/accounts')
 
 
 module.exports = function (passport) {
+
     passport.use(
         new localStrategy({ usernameField: 'email' }, (email, password, done) => {
             // Match user

@@ -1,3 +1,5 @@
+@import url(https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css);
+
 @font-face{
     font-family: SF-Text;
     src: url(../fonts/SF-UI-Text-Regular.otf);
@@ -46,7 +48,6 @@ body>section {
 body>section>ul {
     list-style-type: none;
 }
-
 
 
 form {
@@ -133,6 +134,8 @@ input[type="name"], input[type="password"], input[type="email"]{
     border: none;
     height: 4vh;
     width: 30vh;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 10px;
     padding-left: 10px;
 }
@@ -156,10 +159,6 @@ button[type="submit"], #switch, .keepswiping {
     font-size: 3em;
     color: #FFFFFF;
 }
-
-/* .home {
-    margin: unset;
-} */
 
 a {
     display: block;
@@ -197,6 +196,55 @@ h1, h2 {
     font-family: SF-Bold;
 }
 
+/* ERROR HANDLING */
+.error_messages {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2em;
+}
+
+.error_messages>p {
+    display: block;
+    padding: 6px;
+    margin: 6px;
+    width: 30vh;
+    border-radius: 3px;
+    border: 1px solid rgb(180,180,180);
+    background-color: rgb(212,212,212);
+}
+
+.error_messages .close {
+    float: right;
+    margin: 13px 10px 0px 0px;
+    cursor: pointer;
+}
+
+.error_messages p, .error_messages .close {
+    color: rgb(88,88,88);
+}
+  
+.error_messages>input {
+    display: none;
+}
+
+.error_messages input:checked ~ * {
+    animation-name: dismiss,hide;
+    animation-duration: 300ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-delay: 0s,100ms;
+}
+
+.error_messages p {
+    border: 1px solid rgb(238,211,215);
+    background-color: rgb(242,222,222);
+  }
+  
+  .error_messages>p, .error_messages>.close {
+    color: rgb(185,74,72);
+}
+
 
 @keyframes slidein {
     from {
@@ -209,6 +257,29 @@ h1, h2 {
       width: 100%;
     }
   }
+
+  @keyframes dismiss {
+    0% {
+      opacity: 1;
+    }
+    90%, 100% {
+      opacity: 0;
+      font-size: 0.1px;
+      transform: scale(0);
+    }
+  }
+  
+  @keyframes hide {
+    100% {
+      height: 0px;
+      width: 0px;
+      overflow: hidden;
+      margin: 0px;
+      padding: 0px;
+      border: 0px;
+    }
+  }
+    
 
 /* DESKTOP */
 @media only screen and (min-width: 80em){
@@ -441,6 +512,55 @@ h1, h2 {
 
     p {
         font-size: unset;
+    }
+
+    /* ERROR HANDLING */
+    .error_messages {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: unset;
+    }
+    
+    .error_messages>p {
+        display: block;
+        padding: 6px;
+        margin: 6px;
+        width: 300px;
+        border-radius: 3px;
+        border: 1px solid rgb(180,180,180);
+        background-color: rgb(212,212,212);
+    }
+    
+    .error_messages .close {
+        float: right;
+        margin: 13px -4px 0px 0px;
+        cursor: pointer;
+    }
+    
+    .error_messages p, .error_messages .close {
+        color: rgb(88,88,88);
+    }
+      
+    .error_messages>input {
+        display: none;
+    }
+    
+    .error_messages input:checked ~ * {
+        animation-name: dismiss,hide;
+        animation-duration: 300ms;
+        animation-iteration-count: 1;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+        animation-delay: 0s,100ms;
+    }
+    
+    .error_messages p {
+        border: 1px solid rgb(238,211,215);
+        background-color: rgb(242,222,222);
+    }
+      
+      .error_messages>p, .error_messages>.close {
+        color: rgb(185,74,72);
     }
     
     

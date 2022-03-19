@@ -1,6 +1,12 @@
 <!-- https://ejs.co/#docs -->
 <% if(typeof errors != 'undefined') {%> 
-    <% errors.forEach((error) =>{  %> 
-        <%=  error.msg %> 
+    <% errors.forEach((error) =>{  %>
+        <div class="error_messages">
+            <input type="checkbox" id="<%= error.msg%>">
+            <label class="close" for="<%= error.msg %>">
+                <i class="icon-remove"></i>
+            </label>
+            <p><%=  error.msg %></p>
+        </div>
         <% }) %> 
 <%  }%> 

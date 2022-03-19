@@ -80,11 +80,12 @@ router.post('/register', (req, res) =>{
 
 // LOGIN HANDLER
 router.post('/login', (req, res, next)=> {
+    let errors = [];
     passport.authenticate('local', {
         successRedirect: '/',
-        failureRedirect: '/users/login',
-        // failureFlash: true
+        failureRedirect: '/users/login', 
     })(req, res, next)
+    errors.push({msg: 'email not found'}) 
 })
 
 //LOGOUT HANDLER
