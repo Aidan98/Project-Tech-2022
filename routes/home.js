@@ -10,12 +10,16 @@ router.get('/', ensureAuthenticated, (req, res) =>{
     res.render('index', {
         name: req.user.name,
         email: req.user.email,
-        genre : req.user.genre
+        genre : req.user.genre,
+        profile_pic: req.user.profile_pic,
+        password: req.user.password
     })  
 })
 
-router.post('/update/', function(req, res, next) {
-        Account.findOneAndUpdate( {name:req.user.name}, {name:req.body.name}, {new: true}, (err, data) => {
+router.post('/update', async function(req, res, next) {
+    // let { name, username, password, password2 } = req.body;
+    console.log(req.body.name);
+        await Account.findOneAndUpdate( {name:req.user.name}, {name:req.body.name}, {new: true}, (err, data) => {
                 if(err){
                     console.log(err)
                 }
@@ -25,6 +29,7 @@ router.post('/update/', function(req, res, next) {
                 //   res.redirect('/');
                 }
         }) 
+        const hash = await argon2.hash(password, { hashLength: 10 });
         Account.findOneAndUpdate( {email: req.user.email}, {email: req.body.email}, {new: true}, (err, data) => {
             if(err){
                 console.log(err)

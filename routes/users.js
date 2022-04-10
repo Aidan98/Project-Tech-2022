@@ -4,16 +4,41 @@ const router = express.Router()
 const Account = require('../models/accounts')
 const argon2 = require ('argon2')
 const passport = require('passport')
+const multer = require('multer')
 
 //RENDER PAGES
 router.get('/login', (req, res) => res.render('login'))
 router.get('/register', (req, res) => res.render('register'))
 
+const multerStorage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, '.')
+    },
+    filename: (req, file, cb) => {
+        const ext = file.mimetype.split('/')[1]
+        cb(null, `/public/uploads/${file.fieldname}-${Date.now()}.${ext}`)
+    },
+})
+
+const upload = multer({
+    storage: multerStorage
+})
+
 // REGISTER HANDLER
-router.post('/register', (req, res) =>{
+router.post('/register', upload.single('profile_pic'), (req, res) =>{
     console.log(req.body)
     const { name, email, password, password2, genre} = req.body
-    let errors = [];
+    let profile_pic
+
+    if (!req.file) {
+        console.log('IS THIS WORKING?????')
+        profile_pic = `https://avatars.dicebear.com/api/identicon/${name}.svg`
+    } else {
+        profile_pic = req.file.filename
+        console.log(profile_pic)
+    }
+
+    let errors = []
 
     //CHECK FIELDS
     if (!name || !email || !password || !password2 ) {
@@ -58,7 +83,8 @@ router.post('/register', (req, res) =>{
                     name,
                     email,
                     password,
-                    genre
+                    genre,
+                    profile_pic
                 })
                 try {
                     const hash = await argon2.hash(newAccount.password, {hashLength: 10});

@@ -2,12 +2,14 @@
     <%- include ('./partials/header.ejs') -%>
     <section>
      <h1>Home</h1>
+     <img src="<%= profile_pic %>" alt="Picture of <%= name %> ">
      <p>Welcome <%= name %></p>
      <h2>Current details</h2>
      <ul>
          <li>Name: <%= name %></li>
          <li>Email: <%= email %></li>
-     <li>Genres: <%= genre %></li>
+     <li>Likes: <%= genre %></li>
+     <li><%= password %> </li>
     </ul>
 </section>
 <section>
