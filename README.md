@@ -3,7 +3,7 @@ Festify is an app that allows it's users encounter new people based on their sha
 
 ## Job story
 _When I am using the app I want to be able to create an account so that others can see who I am._
-![Wireframes festiv](https://github.com/Aidan98/Project-Tech-2022/blob/main/public/images/interface.png?raw=true)
+![Wireframes festiv](https://github.com/Aidan98/Project-Tech-2022/blob/main/public/images/interface_v2.png?raw=true)
 
 ## What can you do with Festivy
 With the current iteration of this node.js app you can register, login and update your account. Furthermore your password is hashed using Argon2 for added security.
