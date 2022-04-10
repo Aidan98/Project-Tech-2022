@@ -1,4 +1,4 @@
-// https://github.com/ranisalt/node-argon2/wiki/Migrating-from-another-hash-function
+/* eslint-disable no-undef */
 require('dotenv').config()
 const ejs = require('ejs')
 const express = require('express')
@@ -8,13 +8,13 @@ const passport = require('passport')
 const PORT = process.env.PORT || 3000
 
 
-const app = express();
+const app = express()
 const EXPsession = process.env.SecretSESSION
 const dbKey = process.env.MongoURI
 
 mongoose.connect(dbKey, { useNewURLParser: true })
-  .then(() => console.log('Database has been connected.'))
-  .catch(err => console.log(err))
+    .then(() => console.log('Database has been connected.'))
+    .catch(err => console.log(err))
 
 require('./config/verifyAccount')(passport)
 
@@ -29,21 +29,21 @@ app.use(session({
     secret: EXPsession,
     resave: false,
     saveUninitialized: false
-  })
+})
 )
 
 //PASSPORT MIDDLEWARE
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.initialize())
+app.use(passport.session())
 
 //ROUTES
 app.use('/', require('./routes/home'))
 app.use('/users', require('./routes/users'))
 
 app.get('*', function (req, res) {
-  res.send('error 404 not found', 404)
+    res.send('error 404 not found', 404)
 })
 
 
-app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+app.listen(PORT, () => console.log(`Listening on ${PORT}`))
 

@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "camelcase": "^6.3.0",
+    "eslint": "^8.13.0",
     "nodemon": "^2.0.15"
   }
 }
